@@ -1,18 +1,19 @@
 var fs = require("fs");
+var moment = require("moment");
 var Handlebars = require("handlebars");
 
 function render(resume) {
 	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
 	var template = fs.readFileSync(__dirname + "/resume.template", "utf-8");
-	// var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-	var months = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
 
 	// Nicer dates
 	Handlebars.registerHelper('date', function(date) {
-	  var theDate = new Date(date);
-
-	  return months[theDate.getMonth()] + ' ' + theDate.getFullYear();
+    return moment(date).format('MMM YYYY');
 	});
+
+  Handlebars.registerHelper('spaceToDash', function(str) {
+    return str.replace(/\s/g, '-').toLowerCase();
+  });
 
 	return Handlebars.compile(template)({
 		css: css,

@@ -1,6 +1,6 @@
 body, html {
 	background: #fff;
-	font: 16px 'Open Sans' Helvetica, Arial, sans-serif;
+	font: 12px Helvetica, Arial, sans-serif;
 	line-height: 1.4;
 	margin: 1em 0;
 }
@@ -9,7 +9,7 @@ em {
 }
 p {
 	line-height: 1.6;
-	font-size: 90%;
+	font-size: 75%;
 }
 
 a {
@@ -18,7 +18,7 @@ a {
 	font-weight: 400;
 }
 section {
-	margin: 2em 0 2em;
+	margin: 1em 0 1em;
 }
 blockquote {
 	margin: 0;
@@ -46,8 +46,12 @@ blockquote {
 	font-weight: 400;
 }
 
-.heading header .contact .detail {
+.heading header .contact .detail .profile {
 	margin: 0 1em 0 0;
+}
+
+.profile, .detail {
+  padding: 1em;
 }
 
 .heading img {
@@ -55,16 +59,6 @@ blockquote {
 	max-width: 120px;
 }
 
-.profile {
-	display: inline-block;
-	margin: 0 1em 0 0;
-}
-
-.profile strong,
-.profile span {
-	display: inline-block;
-	margin: 0 1em 0 0;
-}
 /* section / line breaks */
 section h2 {
 	font-size: 140%;
@@ -109,14 +103,14 @@ section h2 {
 
 .item .highlights {
 	list-style: square;
-	font-size: 90%;
+	font-size: 75%;
 }
 
 /* skills */
 #skills .item {
 	margin: 0.5em 0;
 	padding: 0 0 0.5em;
-	font-size: 90%;
+	font-size: 75%;
 }
 
 #skills .item .name {
@@ -143,11 +137,8 @@ section h2 {
 }
 
 /* education */
-#languages .item {
-	display: inline-block;
-	vertical-align: top;
-	width: 49.5%;
-	border-bottom: 0;
+#languages .items {
+  font-size: 75%;
 }
 
 
@@ -157,5 +148,4 @@ section h2 {
 	vertical-align: top;
 	border-bottom: 0;
 }
-
 
