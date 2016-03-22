@@ -30,12 +30,12 @@
 			<div class="contact">
 				{{#if email}}
 				<span class="detail">
-					<a href="mailto:{{email}}">{{email}}</a>
+					<a href="mailto:{{base64decode email}}">{{base64decode email}}</a>
 				</span>
 				{{/if}}
 				{{#if phone}}
 				<span class="detail">
-					{{phone}}
+					{{base64decode phone}}
 				</span>
 				{{/if}}
 				{{#if website}}

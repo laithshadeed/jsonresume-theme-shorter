@@ -15,6 +15,10 @@ function render(resume) {
     return str.replace(/\s/g, '-').toLowerCase();
   });
 
+  Handlebars.registerHelper('base64decode', function(str) {
+    return (new Buffer(str, 'base64')).toString('utf8');
+  });
+
 	return Handlebars.compile(template)({
 		css: css,
 		resume: resume
