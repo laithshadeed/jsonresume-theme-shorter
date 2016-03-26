@@ -46,8 +46,8 @@
         {{#if profiles.length}}
           {{#each profiles}}
             {{#if username}}
-            <span class="profile"></span>
-              <a href="{{url}}"><span class="fa fa-{{spaceToDash network}}"></span></a>
+            <span class="profile">
+              <a href="{{url}}"><span class="fa fa-{{spaceToDash network}} fa-lg"></span></a>
             </span>
             {{/if}}
           {{/each}}
@@ -66,7 +66,9 @@
 		<section class="item"{{#if style}} style="{{style}}"{{/if}}>
 			<header>
 				{{#if company}}
-					<h3 class="name">{{company}}</h3>
+        <h3 class="name">
+          <a href="{{website}}" class="url" target="_blank">{{company}}</a>
+        </h3>
 				{{/if}}
 			</header>
 			{{#if position}}
@@ -162,11 +164,25 @@
 		<div class="item">
 			<header>
 				{{#if institution}}
-					<h3 class="name">{{institution}}</h3>
+					<h3 class="name">
+            <a href="{{website}}" target="_blank">{{institution}}</a>
+          </h3>
 				{{/if}}
 			</header>
 
-			<div class="dates">
+			<div class="qualification">
+				{{#if area}}
+				<span class="area">
+          <strong>{{area}}</strong>
+				</span>
+				{{/if}}
+
+				{{#if gpa}}
+				<span class="gpa">
+					, GPA: {{gpa}}
+				</span>
+				{{/if}}
+
 				{{#if startDate}}
 				<span class="startDate">
 					{{date startDate}}
@@ -182,26 +198,16 @@
 				</span>
 				{{/if}}
 			</div>
+      <div class="highlights">
+      {{#if courses.length}}
+        <ul>
+        {{#each courses}}
+          <li>{{.}}</li>
+        {{/each}}
+        <ul>
+      {{/if}}
+      </div>
 
-			<div class="qualification">
-				{{#if studyType}}
-				<span class="studyType">
-					{{studyType}}
-				</span>
-				{{/if}}
-
-				{{#if area}}
-				<span class="area">
-					- {{area}}
-				</span>
-				{{/if}}
-
-				{{#if gpa}}
-				<span class="gpa">
-					GPA: {{gpa}}
-				</span>
-				{{/if}}
-			</div>
 
 		</div>
 		{{/each}}
