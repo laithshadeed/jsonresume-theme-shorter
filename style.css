@@ -77,7 +77,6 @@ section h2 {
 
 /* Experience items */
 section .item {
-  margin-bottom: 5px;
   padding-bottom: 5px;
 }
 .item {
@@ -116,40 +115,22 @@ section .item {
 	font-size: 75%;
 }
 
-/* skills */
-#skills .item {
-	margin: 0.5em 0;
-	padding: 0 0 0.5em;
-	font-size: 75%;
-}
-
-#skills .item .name {
-	font-weight: 600;
-	display: inline-block;
-	text-transform: uppercase;
-	margin: 0 1em 0 0;
-	width: 23%;
-	vertical-align: top;
-}
-
-#skills .item .keywords {
-	display: inline-block;
-	width: 70%;
-	vertical-align: top;
-}
-
 /* education */
 #education .item {
 	display: inline-block;
 	vertical-align: top;
-	/*width: 49.5%;*/
+	width: 100%;
 	border-bottom: 1px solid #F2EBEC;
-	padding: 0 0 .1em;
 }
 
-/* education */
-#languages .items {
+#education .item ul {
+  list-style: square;
+}
+
+/* languages */
+#languages .item {
   font-size: 75%;
+	border-bottom: none;
 }
 
 

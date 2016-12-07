@@ -157,43 +157,36 @@
 	<section id="education">
 		<h2>Education</h2>
 		{{#each resume.education}}
-		<div class="item">
+		<section class="item">
 			<header>
-				{{#if institution}}
-					<h3 class="name">
-            <a href="{{website}}" target="_blank">{{institution}}</a>
-          </h3>
-				{{/if}}
+        <span class="name">
+          <a href="{{website}}" target="_blank">{{institution}}, </a>
+        </span>
+        <div style="display: inline" class="qualification">
+          <span class="area">
+            <strong>{{area}}</strong>
+          </span>
+          <span class="gpa">
+            , GPA: {{gpa}}
+          </span>
+        </div>
+        <div style="display: inline; float:right">
+          {{#if startDate}}
+          <span class="startDate">
+            {{date startDate}}
+          </span>
+          {{/if}}
+          {{#if endDate}}
+          <span class="endDate">
+            - {{date endDate}}
+          </span>
+          {{else}}
+          <span class="endDate">
+            - Present
+          </span>
+          {{/if}}
+         </div>
 			</header>
-
-			<div class="qualification">
-				{{#if area}}
-				<span class="area">
-          <strong>{{area}}</strong>
-				</span>
-				{{/if}}
-
-				{{#if gpa}}
-				<span class="gpa">
-					, GPA: {{gpa}}
-				</span>
-				{{/if}}
-
-				{{#if startDate}}
-				<span class="startDate">
-					{{date startDate}}
-				</span>
-				{{/if}}
-				{{#if endDate}}
-				<span class="endDate">
-					- {{date endDate}}
-				</span>
-				{{else}}
-				<span class="endDate">
-					- Present
-				</span>
-				{{/if}}
-			</div>
       <div class="highlights">
       {{#if courses.length}}
         <ul>
@@ -205,7 +198,7 @@
       </div>
 
 
-		</div>
+		</section>
 		{{/each}}
 	</section>
 	{{/if}}
