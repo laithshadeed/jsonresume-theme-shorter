@@ -11,7 +11,7 @@
 	{{{css}}}
 	</style>
 	<style media="print">
-		body { font-size: 9px; }
+		body { font-size: 12px; }
 		.item { page-break-inside: avoid; }
 	</style>
 
@@ -65,32 +65,28 @@
 		{{#each resume.work}}
 		<section class="item"{{#if style}} style="{{style}}"{{/if}}>
 			<header>
-				{{#if company}}
-        <h3 class="name">
-          <a href="{{website}}" class="url" target="_blank">{{company}}</a>
-        </h3>
-				{{/if}}
-			</header>
-			{{#if position}}
-			<span class="position">
-				{{position}}
-			</span>
-			{{/if}}
+        <span class="name">
+          <a href="{{website}}" class="url" target="_blank">{{company}},</a>
+        </span>
+        <span class="position">{{position}}</span>
 
-			{{#if startDate}}
-			<span class="startDate">
-				{{date startDate}}
-			</span>
-			{{/if}}
-			{{#if endDate}}
-			<span class="endDate">
-				- {{date endDate}}
-			</span>
-			{{else}}
-			<span class="endDate">
-				- heute
-			</span>
-			{{/if}}
+        <div class="start-end">
+          {{#if startDate}}
+          <span class="startDate">
+            {{date startDate}}
+          </span>
+          {{/if}}
+          {{#if endDate}}
+          <span class="endDate">
+            - {{date endDate}}
+          </span>
+          {{else}}
+          <span class="endDate">
+            - Current
+          </span>
+          {{/if}}
+         </div>
+			</header>
 
 			{{#if summary}}
 			<div class="summary">
