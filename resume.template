@@ -65,10 +65,10 @@
 		{{#each resume.work}}
 		<section class="item"{{#if style}} style="{{style}}"{{/if}}>
 			<header>
-        <span class="name">
-          <a href="{{website}}" class="url" target="_blank">{{company}},</a>
-        </span>
         <span class="position">{{position}}</span>
+        <span class="name">
+          <a href="{{website}}" class="url" target="_blank">{{company}}</a>, {{location.city}}
+        </span>
 
         <div class="start-end">
           {{#if startDate}}
